@@ -1,0 +1,35 @@
+{
+  "name": "react-search-input-zn",
+  "version": "1.1.0",
+  "description": "React search input component that supports search & filter the data of the array of an object.",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/index.css"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "search",
+    "search input",
+    "custom select",
+    "react search select",
+    "multi select"
+  ],
+  "author": "mdt",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^7.0.6",
+    "vite-plugin-static-copy": "^3.1.1"
+  }
+}
