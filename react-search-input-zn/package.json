@@ -17,9 +17,13 @@
     "react",
     "search",
     "search input",
-    "custom select",
-    "react search select",
-    "multi select"
+    "react search",
+    "input field",
+    "filter",
+    "search box",
+    "react search component",
+    "search bar",
+    "custom search input"
   ],
   "author": "mdt",
   "license": "MIT",

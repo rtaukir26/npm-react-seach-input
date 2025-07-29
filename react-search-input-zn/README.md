@@ -1,72 +1,77 @@
-# react-select-search-sm
+# react-search-input-zn
 
-A lightweight and customizable React dropdown component with support for:
+A lightweight and customizable **React search input** component with:
 
-- ✅ Single and Multi Select modes
-- 🔍 Searchable options
-- ✨ Clean and flexible UI
+- ✅ Support for searching list
+- 🔍 Searchable, filterable options
+- ✨ Clean, flexible, and accessible UI
 
 ---
 
 ## Demo
 
-![Demo](./src/assets/selectSearchDemo.gif)
+![Demo](./src/assets/reactSearchInputDemo.gif)
 
 ## Installation
 
 ```bash
-npm install react-select-search-sm
+npm install react-search-input-zn
 ```
 
 ## Import CSS
 
-To apply the default styles, import the CSS file in your root component or wherever appropriate:
+To apply default styles, import the CSS in your entry/root file:
 
 ```bash
-import "react-select-search-sm/dist/index.css";
+import "react-search-input-zn/dist/index.css";
 ```
 
 ## Usage in ReactJs
 
 ```bash
 import React, { useState } from "react";
-import SelectSearch from "react-select-search-sm";
-import "react-select-search-sm/dist/index.css";
+import ReactSearchBox from "react-search-input-zn";
+import "react-search-input-zn/dist/index.css";
 
-const options = [
-{ name: "Option A", value: "A" },
-{ name: "Option B", value: "B" },
-];
+const [data,setData]=useState([
+  { name: "mango", price: "200" },
+  { name: "apple", price: "160" },
+  { name: "banana", price: "120" },
+];)
 
 function App() {
-const [selected, setSelected] = useState([]);
-
-return (
-<SelectSearch
-options={options}
-selectedOption={selected}
-setSelectedOption={setSelected}
-multi={false} // true -- for multi select
-label="Select item"
-searchPlaceholder="Search"
-handleChange=null
-/>
-);
+  const [result, setResult] = useState([]);
+   const handleChange = (search) => {
+      setMainData(search);
+   };
+  return (
+    <ReactSearchBox
+      data={data}
+      handleChange={handleChange},
+      matchesWith={["name", "price"]}
+      //optional
+      styles={{
+      backgroundColor: "#ddd",
+      borderRadius: "50px",
+      margin: "0px",
+      padding: "10px",
+      width: "400px",
+    }}
+    />
+  );
 }
 
 export default App;
+
 
 ```
 
 ## Props
 
-| Prop                | Type       | Default           | Description                                                   |
-| ------------------- | ---------- | ----------------- | ------------------------------------------------------------- |
-| `options`           | `array`    | `[]`              | List of options (each with `name` and `value` keys)           |
-| `selectedOption`    | `array`    | `[]`              | Currently selected option(s)                                  |
-| `setSelectedOption` | `function` | `() => {}`        | Setter to update selected option(s)                           |
-| `multi`             | `boolean`  | `false`           | Enables multi-select mode if `true`, single-select if `false` |
-| `label`             | `string`   | `"Select"`        | Placeholder label shown when nothing is selected              |
-| `searchPlaceholder` | `string`   | `"search.."`      | Placeholder inside the search input                           |
-| `notFound`          | `string`   | `"No data found"` | Text shown when no options match the search term              |
-| `handleChange`      | `function` | `null`            | Optional callback triggered when selection changes            |
+| Prop           | Type       | Default            | Description                                                                    |
+| -------------- | ---------- | ------------------ | ------------------------------------------------------------------------------ |
+| `data`         | `array`    | `[]`               | Array of items to search (objects with any structure).                         |
+| `handleChange` | `function` | `null`             | Callback function triggered when a user search.                                |
+| `matchesWith`  | `array`    | `["name","price"]` | Keys in `data` objects to match user input against (e.g. `["name", "price"]`). |
+| `searchLabel`  | `string`   | `"Search"`         | Placeholder text shown in the search input field.                              |
+| `styles`       | `object`   | `{}`               | Optional inline CSS styles for customizing the input container.                |

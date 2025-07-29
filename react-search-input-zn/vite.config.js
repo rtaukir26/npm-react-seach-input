@@ -17,7 +17,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.jsx"),
-      name: "ReactSelectSearch",
+      name: "ReactSearchInput",
       fileName: () => `index.js`, // ← Force single output filename
       formats: ["es"], // Optional: if you're using just ESM
     },
