@@ -10,7 +10,9 @@ A lightweight and customizable **React search input** component with:
 
 ## Demo
 
-![Demo](./src/assets/reactSearchInputDemo.gif)
+<!-- ![Demo](./src/assets/reactSearchInputDemo.gif) -->
+
+![Demo](https://raw.githubusercontent.com/rtaukir26/npm-react-seach-input/master/react-search-input-zn/src/assets/reactSearchInputDemo.gif)
 
 ## Installation
 
