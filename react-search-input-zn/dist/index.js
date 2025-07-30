@@ -248,7 +248,7 @@ React keys must be passed directly to JSX without using spread:
       s
     )(), B = C(d(s)), L = {};
     v.Fragment = O, v.jsx = function(e, r, t, n, i) {
-      var c = 1e4 > x?.recentlyCreatedOwnerStacks++;
+      var c = 1e4 > x.recentlyCreatedOwnerStacks++;
       return R(
         e,
         r,
@@ -260,7 +260,7 @@ React keys must be passed directly to JSX without using spread:
         c ? C(d(e)) : B
       );
     }, v.jsxs = function(e, r, t, n, i) {
-      var c = 1e4 > x?.recentlyCreatedOwnerStacks++;
+      var c = 1e4 > x.recentlyCreatedOwnerStacks++;
       return R(
         e,
         r,

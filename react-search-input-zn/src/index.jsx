@@ -6,6 +6,7 @@ const ReactSearchBox = ({
   data = [],
   handleChange,
   searchLabel = "Search",
+  matchesWith,
   styles,
 }) => {
   const [searchInput, setSearchInput] = useState("");
@@ -17,12 +18,10 @@ const ReactSearchBox = ({
   const handleSearchChange = (e) => {
     let { value } = e.target;
     setSearchInput(value);
-    let result = receivedData?.filter((item) => {
-      const nameRes = item?.name?.toLowerCase().includes(value?.toLowerCase());
-      const valueRes = item?.value
-        ?.toLowerCase()
-        ?.includes(value?.toLowerCase());
-      return nameRes || valueRes;
+    const result = receivedData?.filter((item) => {
+      return matchesWith?.some((key) =>
+        item[key]?.toLowerCase().includes(value?.toLowerCase())
+      );
     });
     handleChange(result);
   };
