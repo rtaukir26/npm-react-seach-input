@@ -4,9 +4,6 @@ import path from "path";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
-  define: {
-    "process.env.NODE_ENV": JSON.stringify("production"), // 👈 Add this
-  },
   plugins: [
     react(),
     viteStaticCopy({
@@ -21,9 +18,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.jsx"),
-      name: "ReactSearchInput",
-      fileName: () => `index.js`,
-      formats: ["es"],
+      name: "ReactSearchBox",
+      fileName: (format) => `index.${format}.js`,
+      formats: ["es", "cjs"], // ✅ add CommonJS for compatibility
     },
     rollupOptions: {
       external: ["react", "react-dom"],

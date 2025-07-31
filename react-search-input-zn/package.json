@@ -1,6 +1,6 @@
 {
   "name": "react-search-input-zn",
-  "version": "1.1.6",
+  "version": "1.1.8",
   "description": "React search input component that supports search & filter the data of the array of an object.",
   "repository": {
     "type": "git",
@@ -10,8 +10,8 @@
   "bugs": {
     "url": "https://github.com/rtaukir26/npm-react-seach-input"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
