@@ -10,7 +10,7 @@ export default defineConfig({
       targets: [
         {
           src: "src/index.css",
-          dest: ".",
+          dest: ".", // keeps it next to JS build
         },
       ],
     }),
@@ -20,9 +20,10 @@ export default defineConfig({
       entry: path.resolve(__dirname, "src/index.jsx"),
       name: "ReactSearchBox",
       fileName: (format) => `index.${format}.js`,
-      formats: ["es", "cjs"], // ✅ add CommonJS for compatibility
+      formats: ["es", "cjs"],
     },
     rollupOptions: {
+      // 👇 This prevents bundling React and ReactDOM
       external: ["react", "react-dom"],
       output: {
         globals: {
